@@ -1,0 +1,40 @@
+x = input()
+y = int(input())
+z = input()
+
+
+g = list()
+if x=='encrypt' :
+	c = list(z)
+	for i in c :
+		r = ord(i)
+		g.append(r)
+		
+	t = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	j = " "
+	u = list()
+	for number in g[::-1] :
+		while number!=0:
+			k,f = divmod(number, y)
+			j = t[f] + j
+			number = number//y
+		u.append(j)
+		j = " "
+	for e in  u[::-1] :
+		print(e, end=" ")
+	
+b = list()
+if x=='decrypt' :
+	q = z.split(" ")
+	for i in q :
+		 s = int(i, y)
+		 b.append(s)
+	r = ''.join(chr(t) for t in b)
+	print(r)
+
+		
+	
+	
+		 
+
+
